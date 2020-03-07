@@ -29,11 +29,13 @@
 
         <nav class="actions">
           <%= link_to embedded_svg("plus.svg"),  new_post_path  %>
-          <%= link_to embedded_svg("user.svg"),  "#"  %>
+          <%= link_to embedded_svg("user.svg"),  "#", data: {modal_id: "user_actions"}  %>
         </nav>
       </div>
     </header>
 
     <%= yield %>
+
+    <%= render "layouts/user_actions_modal.html" %>
   </body>
 </html>

@@ -8,7 +8,8 @@ class CommentsController < ApplicationController
       comment_created: render_to_string(partial: @comment))
       redirect_to @comment.post, notice: "Comment saved successfully."
     else
-      flash:now[:alert] = @comment.errors.full_messages.to_sentence
+      @post = @comment.post
+      flash.now[:alert] = @comment.errors.full_messages.to_sentence
       render "posts/show"
     end
   end
